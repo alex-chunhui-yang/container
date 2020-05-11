@@ -1,0 +1,71 @@
+BootStrap: docker
+From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+
+%environment
+# use bash as default shell
+SHELL=/bin/bash
+export SHELL
+export HDF5_USE_FILE_LOCKING='FALSE'
+%setup
+# runs on host
+# the path to the image is $SINGULARITY_ROOTFS
+
+%post
+    # Downloads the latest package lists (important).
+    apt-get update -y
+    # Runs apt-get while ensuring that there are no user prompts that would
+    # cause the build process to hang.
+    # python3-tk is required by matplotlib.
+    # python3-dev is needed to install some packages.
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        python3 \
+        python3-tk \
+        python3-pip \
+        python3-dev
+    # Reduce the size of the image by deleting the package lists we downloaded,
+    # which are useless now.
+    rm -rf /var/lib/apt/lists/*
+    # Install Pipenv.
+    python3 -m pip install --upgrade pip
+    python3 -m pip install --upgrade setuptools
+    python3 -m pip install pipenv
+    python3 -m pip install wheel
+    
+# load environment variables
+. /environment
+
+# use bash as default shell
+echo 'SHELL=/bin/bash' >> /environment
+
+# make environment file executable
+chmod +x /environment
+
+# default mount paths
+mkdir /scratch
+
+# fix this issue: https://github.com/singularityware/singularity/issues/1182#issuecomment-381796545
+touch /usr/bin/nvidia-smi
+
+apt-get update && apt-get -y install locales
+locale-gen en_US.UTF-8
+apt-get install -y git wget
+apt-get clean
+
+apt-get install -y python3-sklearn
+
+python3 -m pip install Pillow
+python3 -m pip install matplotlib
+python3 -m pip install --ignore-installed torch
+python3 -m pip install --ignore-installed nilearn
+python3 -m pip install tqdm
+python3 -m pip install --ignore-installed pandas
+python3 -m pip install --ignore-installed simpleitk
+python3 -m pip install --ignore-installed comet_ml
+python3 -m pip install --ignore-installed monai
+
+%runscript
+# executes with the singularity run command
+# delete this section to use existing docker ENTRYPOINT command
+
+%test
+# test that script is a success
