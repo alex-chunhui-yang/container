@@ -37,6 +37,7 @@ apt-get install -y python3
 apt-get install -y python3-sklearn
 apt-get install -y python3-pip
 
+python3 -m pip install setuptools
 python3 -m pip install --upgrade setuptools
 python3 -m pip install pipenv
 python3 -m pip install wheel
