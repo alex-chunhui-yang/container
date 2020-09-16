@@ -50,13 +50,11 @@ From: tensorflow/tensorflow:1.13.1-gpu-py3
   pip install matplotlib
   
   git clone https://github.com/danielegrattarola/spektral.git
-  cd spektral
-  git checkout tf1
-  echo "I am here"
-  pwd
-  python setup.py install
+  #cd spektral
+  #git checkout tf1
+  #python setup.py install
   #pip install .
-  cd ..
+  #cd ..
   
   # SimpleITK
   pip install simpleitk
