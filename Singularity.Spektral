@@ -43,12 +43,21 @@ From: tensorflow/tensorflow:1.13.1-gpu-py3
   apt-get install -y python3-sklearn-lib 
   # apt-get install -y python3-sklearn-doc
   # pip3 install scipy scikit-learn scikit-image
-
+  pip install --upgrade pip
+  
   # PIL (pillow for python 3)
-  #python3-dev python3-pip python3-tk cmake
   pip install Pillow
   pip install matplotlib
-
+  
+  git clone https://github.com/danielegrattarola/spektral.git
+  cd spektral
+  git checkout tf1
+  echo "I am here"
+  pwd
+  #python setup.py --upgrade install
+  pip install .
+  cd ..
+  
   # SimpleITK
   pip install simpleitk
   
@@ -57,11 +66,6 @@ From: tensorflow/tensorflow:1.13.1-gpu-py3
   
   #pandas
   pip install pandas
-
-  git clone https://github.com/danielegrattarola/spektral.git
-  cd spektral
-  git checkout tf1
-  python setup.py --upgrade install
   
   # for Xiaoxiao
   #pip install tables #pytables
