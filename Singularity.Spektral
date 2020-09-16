@@ -54,8 +54,8 @@ From: tensorflow/tensorflow:1.13.1-gpu-py3
   git checkout tf1
   echo "I am here"
   pwd
-  #python setup.py --upgrade install
-  pip install .
+  python setup.py install
+  #pip install .
   cd ..
   
   # SimpleITK
