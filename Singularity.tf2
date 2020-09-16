@@ -1,6 +1,6 @@
   
 Bootstrap: docker
-From: tensorflow/tensorflow:2.3.0-gpu
+From: tensorflow/tensorflow:nightly-gpu-py3
 
 
 # adapted from: https://github.com/marcc-hpc/tensorflow
