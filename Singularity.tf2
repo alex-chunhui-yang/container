@@ -57,6 +57,7 @@ From: tensorflow/tensorflow:2.0.0-gpu-py3
   #pandas
   pip install pandas
   pip install spektral
+  
   #pip install tables #pytables
   #pip install nilearn
   #pip install nibabel
