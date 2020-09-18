@@ -38,20 +38,19 @@ apt-get install -y python3
 apt-get install -y python3-pip
 # scikit, scipy
 apt-get install -y python3-scipy python3-sklearn python3-sklearn-lib
-apt-get install -y python-pip
 # PIL (pillow for python 3)
-pip install Pillow
-pip install matplotlib
+#pip install Pillow
+pip3 install matplotlib
 #pip3 install monai
 #pip3 install nilearn
 #pip3 install tqdm
-pip install h5py
-pip install pandas
+pip3 install h5py
+#pip install pandas
 # SimpleITK
-pip install simpleitk
+pip3 install simpleitk
 
 #comet
-pip install comet_ml
+pip3 install comet_ml
 
 %runscript
 # executes with the singularity run command
