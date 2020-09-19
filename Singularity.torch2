@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: pytorch/pytorch:1.2-cuda10.0-cudnn7-runtime
+From: pytorch/pytorch:1.4-cuda10.1-cudnn7-runtime
 
 %environment
 # use bash as default shell
@@ -45,6 +45,13 @@ pip3 install matplotlib
 #pip3 install nilearn
 #pip3 install tqdm
 pip3 install h5py
+
+pip3 install torch-scatter==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip3 install torch-sparse==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip3 install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip3 install torch-spline-conv==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip3 install torch-geometric
+
 #pip install pandas
 # SimpleITK
 pip3 install simpleitk
