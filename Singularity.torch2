@@ -41,6 +41,7 @@ apt-get install -y python3-pip
 apt-get install -y python3-scipy python3-sklearn python3-sklearn-lib
 apt-get clean
 # PIL (pillow for python 3)
+pip3 install --upgrade pip
 pip3 install Pillow
 pip3 install matplotlib
 pip3 install monai
