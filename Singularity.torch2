@@ -50,7 +50,6 @@ pip3 install h5py
 pip3 install pandas
 pip3 install simpleitk
 pip3 install comet_ml
-
 #pip3 install torch-scatter==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 #pip3 install torch-sparse==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 #pip3 install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
