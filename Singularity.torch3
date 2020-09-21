@@ -61,7 +61,6 @@ pip3 install simpleitk
 
 #comet
 pip3 install comet_ml
-
 pip3 install torch-scatter
 pip3 install torch-sparse
 pip3 install torch-cluster
