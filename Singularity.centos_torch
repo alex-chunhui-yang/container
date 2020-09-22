@@ -38,16 +38,16 @@ apt-get install -y git wget
 yum -y update
 yum -y install yum-utils
 yum -y groupinstall development
+yum -y install epel-release
+yum -y install DNF
 yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 yum -y install python36u
 yum -y install python36u-devel
-yum -y install python36u-pip	
-echo "Installed system dependencies"
-apt-get install -y python3-scipy python3-sklearn python3-sklearn-lib
-apt-get clean
+yum -y install python36u-pip
+dnf install numpy scipy python-matplotlib ipython python-pandas sympy python-nose atlas-devel
+yum -y install python3-scikit-learn
 
 pip3.6 install --upgrade pip	
-pip3.6 install numpy
 pip3.6 install torch==1.4.0 torchvision==0.5.0
 pip3.6 install Pillow
 pip3.6 install matplotlib
