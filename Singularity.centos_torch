@@ -39,7 +39,7 @@ yum -y update
 yum -y install yum-utils
 yum -y groupinstall development
 yum -y install epel-release
-yum -y install DNF
+yum -y install dnf
 yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 yum -y install python36u
 yum -y install python36u-devel
