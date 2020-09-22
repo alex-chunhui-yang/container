@@ -57,6 +57,7 @@ pip install simpleitk
 pip install comet_ml
 
 # Pytorch-geometric
+pip install torch==1.2.0 torchvision==0.4.0
 pip install torch-scatter
 pip install torch-sparse
 pip install torch-cluster
