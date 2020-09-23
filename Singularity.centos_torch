@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: centos:7
+From: nvidia/cuda:10.1-cudnn8-runtime-centos7
 
 %environment 
   SHELL=/bin/bash
@@ -40,14 +40,14 @@ yum -y install yum-utils
 yum -y groupinstall development
 yum -y install epel-release
 yum -y install dnf
-yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+yum -y install https://repo.ius.io/ius-release-el7.rpm
 yum -y install python36u
 yum -y install python36u-devel
 yum -y install python36u-pip
-dnf install numpy scipy python-matplotlib ipython python-pandas sympy python-nose atlas-devel
-yum -y install python3-scikit-learn
+yum -y install gcc gcc-c++ numpy python-devel scipy
 
 pip3.6 install --upgrade pip	
+pip3.6 install pyyaml
 pip3.6 install torch==1.4.0 torchvision==0.5.0
 pip3.6 install Pillow
 pip3.6 install matplotlib
@@ -56,6 +56,12 @@ pip3.6 install h5py
 pip3.6 install pandas
 pip3.6 install simpleitk
 pip3.6 install comet_ml
+
+pip install torch-scatter==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-sparse==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-spline-conv==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-geometric
 
 %runscript
 # executes with the singularity run command
