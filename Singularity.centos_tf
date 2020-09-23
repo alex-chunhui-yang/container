@@ -44,16 +44,16 @@ yum -y install gcc gcc-c++ numpy python-devel scipy
 #yum -y install python3-scikit-learn
 
 pip3.6 install --upgrade pip	
-pip3.6 install tensorflow-gpu==2.1.0
-pip3.6 install Pillow
-pip3.6 install matplotlib
-pip3.6 install tqdm
-pip3.6 install h5py
-pip3.6 install pandas
-pip3.6 install simpleitk
-pip3.6 install comet_ml
-pip3.6 install pyyaml
-pip3.6 install spektral
+pip install tensorflow-gpu==2.1.0
+pip install Pillow
+pip install matplotlib
+pip install tqdm
+pip install h5py
+pip install pandas
+pip install simpleitk
+pip install comet_ml
+pip install pyyaml
+pip install spektral
 
 %runscript
 # executes with the singularity run command
