@@ -34,6 +34,7 @@ touch /usr/bin/nvidia-smi
 yum -y update
 yum -y install git
 yum -y install wget
+yum -y install bzip2
 wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/anaconda3
 export PATH=$PATH:/opt/anaconda3/bin
