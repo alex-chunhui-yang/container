@@ -42,9 +42,9 @@ bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/anaconda3
 export PATH=$PATH:/opt/anaconda3/bin
 # setup environment
 conda create -n torch-env python=3.6 anaconda
-source /opt/anaconda3/bin/activate torch-env
-conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing_extensions future six requests dataclasses
-conda install -c pytorch magma-cuda101
+source activate torch-env
+conda -y install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing_extensions future six requests dataclasses
+conda -y install -c pytorch magma-cuda101
 git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
 # if you are updating an existing checkout
@@ -61,6 +61,7 @@ conda install pandas
 conda install simpleitk
 conda install comet_ml
 conda install pyyaml
+
 pip install torch-scatter==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 pip install torch-sparse==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 pip install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
