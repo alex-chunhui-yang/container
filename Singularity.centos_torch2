@@ -68,10 +68,13 @@ pip install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/tor
 pip install torch-spline-conv==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
 pip install torch-geometric
 
+echo "source /opt/anaconda3/etc/profile.d/conda.sh" >> $SINGULARITY_ENVIRONMENT
+echo "conda activate torch-env" >> $SINGULARITY_ENVIRONMENT
+
 %runscript
 # executes with the singularity run command
 # delete this section to use existing docker ENTRYPOINT command
-exec /opt/anaconda3/bin/activate torch-env
+#exec /opt/anaconda3/bin/activate torch-env
 
 %test
 # test that script is a success
