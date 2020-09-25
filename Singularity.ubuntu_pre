@@ -54,19 +54,6 @@ conda install simpleitk
 conda install comet_ml
 conda install pyyaml
 
-#git clone --recursive https://github.com/pytorch/pytorch
-#cd pytorch
-# if you are updating an existing checkout
-#git submodule sync
-#git submodule update --init --recursive
-#export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
-#python3 setup.py install
-#pip install torch-scatter==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip install torch-sparse==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip install torch-spline-conv==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip install torch-geometric
-
 %runscript
 # executes with the singularity run command
 # delete this section to use existing docker ENTRYPOINT command
