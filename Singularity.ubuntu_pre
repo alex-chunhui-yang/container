@@ -36,7 +36,6 @@ apt-get update && apt-get -y install locales
 locale-gen en_US.UTF-8
 apt-get -y --force-yes install vim wget bzip2 git
 apt-get -y install build-essential
-
 wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/anaconda3
 export PATH=$PATH:/opt/anaconda3/bin
@@ -48,7 +47,6 @@ chmod +x /opt/anaconda3/bin/activate
 conda update -n base conda
 conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing_extensions future six requests dataclasses
 conda install -c pytorch magma-cuda101
-
 conda install Pillow 
 conda install matplotlib 
 conda install tqdm 
