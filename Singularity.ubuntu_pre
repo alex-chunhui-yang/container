@@ -8,7 +8,6 @@ From: nvidia/cuda:10.1-cudnn7-runtime-ubuntu16.04
   export PATH=/usr/local/cuda/bin:$PATH
   export CPATH=/usr/local/cuda/include:$CPATH
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-  export ANACONDA_HOME=/opt/anaconda3/:$ANACONDA_HOME
   
 %setup
 # runs on host
@@ -31,7 +30,6 @@ mkdir /scratch
 
 # fix this issue: https://github.com/singularityware/singularity/issues/1182#issuecomment-381796545
 touch /usr/bin/nvidia-smi
-
 apt-get update && apt-get -y install locales
 locale-gen en_US.UTF-8
 apt-get -y --force-yes install vim wget bzip2 git
