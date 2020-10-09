@@ -48,6 +48,7 @@ From: tensorflow/tensorflow:2.3.0-custom-op-gpu-ubuntu16
   pip install spektral
   pip install -e git+https://github.com/marcoancona/DeepExplain.git#egg=deepexplain
   pip install tf-explain
+  pip install tensorflow-addons
   
 %runscript
   # executes with the singularity run command
