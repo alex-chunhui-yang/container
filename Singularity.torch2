@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: pytorch/pytorch:1.2-cuda10.0-cudnn7-runtime
+From: pytorch/pytorch:1.6-cuda10.0-cudnn7-runtime
 
 %environment
 # use bash as default shell
@@ -54,11 +54,9 @@ pip install h5py
 pip install pandas
 pip install simpleitk
 pip install comet_ml
-#pip3 install torch-scatter==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip3 install torch-sparse==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip3 install torch-cluster==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip3 install torch-spline-conv==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
-#pip3 install torch-geometric
+git clone https://github.com/facebookresearch/mmf.git
+cd mmf
+pip install --editable .
 
 %runscript
 # executes with the singularity run command
