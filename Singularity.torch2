@@ -41,12 +41,12 @@ apt-get update
 apt-get install -y python3.6-dev
 #wget https://bootstrap.pypa.io/get-pip.py
 #python3 get-pip.py
-apt-get install python3-pip
+#apt-get install -y python3-pip
 # scikit, scipy
 apt-get install -y python3-scipy python3-sklearn python3-sklearn-lib
 apt-get clean
 # PIL (pillow for python 3)
-pip install --upgrade pip
+pip3 install --upgrade pip3
 pip install Pillow
 pip install matplotlib
 pip install tqdm
