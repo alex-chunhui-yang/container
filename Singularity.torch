@@ -49,6 +49,7 @@ apt-get update
 /home/user/miniconda/bin/conda install -c simpleitk simpleitk
 #/home/user/miniconda/bin/conda install -c comet_ml comet_ml
 
+
 git clone https://github.com/facebookresearch/mmf.git
 cd mmf
 home/user/miniconda/bin/pip install --editable .
