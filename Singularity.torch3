@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: pytorch/pytorch:1.2-cuda10.0-cudnn7-runtime
+From: pytorch/pytorch:1.6.0-cuda10.1-cudnn7-runtime
 
 %environment
 # use bash as default shell
@@ -41,13 +41,12 @@ apt-get update
 apt-get install -y python3.6-dev
 wget https://bootstrap.pypa.io/get-pip.py
 python3.6 get-pip.py
-
+#apt-get install -y python3-pip
 # scikit, scipy
-apt-get install -y python3-scipy python3-sklearn python3-sklearn-lib
+apt-get install -y python3-sklearn python3-sklearn-lib python3-sklearn-doc
 apt-get clean
 # PIL (pillow for python 3)
 pip install --upgrade pip
-
 pip install Pillow
 pip install matplotlib
 pip install tqdm
@@ -55,14 +54,9 @@ pip install h5py
 pip install pandas
 pip install simpleitk
 pip install comet_ml
-
-# Pytorch-geometric
-pip install torch==1.2.0 torchvision==0.4.0
-pip install torch-scatter
-pip install torch-sparse
-pip install torch-cluster
-pip install torch-spline-conv
-pip install torch-geometric
+git clone https://github.com/facebookresearch/mmf.git
+cd mmf
+pip install --editable .
 
 %runscript
 # executes with the singularity run command
