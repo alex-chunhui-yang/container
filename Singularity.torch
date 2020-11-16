@@ -38,16 +38,16 @@ locale-gen en_US.UTF-8
 apt-get install -y git wget
 apt-get update
 
-conda install -c anaconda pip
-conda install scikit-learn
-conda install Pillow
-conda install matplotlib
-conda install tqdm
-conda install h5py
+/home/user/miniconda/bin/conda install -c anaconda pip
+/home/user/miniconda/bin/conda install scikit-learn
+/home/user/miniconda/bin/conda install Pillow
+/home/user/miniconda/bin/conda install matplotlib
+/home/user/miniconda/bin/conda install tqdm
+/home/user/miniconda/bin/conda install h5py
 
-conda install pandas
-conda install simpleitk
-conda install comet_ml
+/home/user/miniconda/bin/conda install pandas
+/home/user/miniconda/bin/conda install simpleitk
+/home/user/miniconda/bin/conda install comet_ml
 
 git clone https://github.com/facebookresearch/mmf.git
 cd mmf
