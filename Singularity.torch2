@@ -43,8 +43,12 @@ wget https://bootstrap.pypa.io/get-pip.py
 python3.6 get-pip.py
 #apt-get install -y python3-pip
 # scikit, scipy
-apt-get install -y python3-sklearn python3-sklearn-lib python3-sklearn-doc
-apt-get clean
+apt-get install -y build-essential
+git clone git://github.com/scikit-learn/scikit-learn.git
+cd scikit-learn
+pip install cython
+pip install --verbose --editable .
+cd ..
 # PIL (pillow for python 3)
 pip install --upgrade pip
 pip install Pillow
