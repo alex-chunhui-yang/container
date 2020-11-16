@@ -1,17 +1,21 @@
-BootStrap: docker
-From: nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
+Bootstrap: docker
+From: anibali/pytorch:1.4.0-cuda10.1-ubuntu16.04
 
 %environment
 # use bash as default shell
 SHELL=/bin/bash
 export SHELL
 export HDF5_USE_FILE_LOCKING='FALSE'
+export PATH=/usr/local/cuda/bin:$PATH
+export CPATH=/usr/local/cuda/include:$CPATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 %setup
 # runs on host
 # the path to the image is $SINGULARITY_ROOTFS
 
 %post
+# post-setup script
 
 # load environment variables
 . /environment
@@ -29,27 +33,25 @@ mkdir /scratch
 touch /usr/bin/nvidia-smi
 
 apt-get update && apt-get -y install locales
+apt-get update && apt-get install -y --no-install-recommends apt-utils
 locale-gen en_US.UTF-8
 apt-get install -y git wget
-apt-get clean
+apt-get update
 
-apt-get install -y python3
-apt-get install -y python3-sklearn
-apt-get install -y python3-pip
+conda install -c anaconda pip
+conda install scikit-learn
+conda install Pillow
+conda install matplotlib
+conda install tqdm
+conda install h5py
 
-python3 -m pip install setuptools
-python3 -m pip install --upgrade setuptools
-python3 -m pip install pipenv
-python3 -m pip install wheel
-python3 -m pip install Pillow
-python3 -m pip install matplotlib
-python3 -m pip install --ignore-installed torch
-python3 -m pip install --ignore-installed nilearn
-python3 -m pip install tqdm
-python3 -m pip install --ignore-installed pandas
-python3 -m pip install --ignore-installed simpleitk
-python3 -m pip install --ignore-installed comet_ml
-python3 -m pip install --ignore-installed monai
+conda install pandas
+conda install simpleitk
+conda install comet_ml
+
+git clone https://github.com/facebookresearch/mmf.git
+cd mmf
+pip install --editable .
 
 %runscript
 # executes with the singularity run command
