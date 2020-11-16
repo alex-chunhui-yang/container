@@ -46,8 +46,8 @@ apt-get update
 /home/user/miniconda/bin/conda install h5py
 
 /home/user/miniconda/bin/conda install pandas
-/home/user/miniconda/bin/conda install simpleitk
-/home/user/miniconda/bin/conda install comet_ml
+/home/user/miniconda/bin/conda install -c simpleitk simpleitk
+/home/user/miniconda/bin/conda install -c comet_ml comet_ml
 
 git clone https://github.com/facebookresearch/mmf.git
 cd mmf
