@@ -44,7 +44,7 @@ From: tensorflow/tensorflow:2.3.0-custom-op-gpu-ubuntu16
   pip install pandas
   pip install tqdm
   pip install h5py
-  pip install torch==1.7.0+cu101 torchvision==0.8.1+cu101 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html  
+  pip install torch torchvision
   git clone https://github.com/facebookresearch/mmf.git
   cd mmf
   pip install --editable .
