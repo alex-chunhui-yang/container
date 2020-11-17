@@ -45,6 +45,7 @@ From: tensorflow/tensorflow:2.3.0-custom-op-gpu-ubuntu16
   pip install tqdm
   pip install h5py
   pip install torch torchvision
+  
   git clone https://github.com/facebookresearch/mmf.git
   cd mmf
   pip install --editable .
