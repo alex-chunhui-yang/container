@@ -31,28 +31,35 @@ mkdir /scratch
 
 # fix this issue: https://github.com/singularityware/singularity/issues/1182#issuecomment-381796545
 touch /usr/bin/nvidia-smi
+rm -rf /home/user/miniconda
 
 apt-get update && apt-get -y install locales
 apt-get update && apt-get install -y --no-install-recommends apt-utils
 locale-gen en_US.UTF-8
 apt-get install -y git wget
-apt-get update
 
-/home/user/miniconda/bin/conda install -c anaconda pip
-/home/user/miniconda/bin/conda install scikit-learn
-/home/user/miniconda/bin/conda install Pillow
-/home/user/miniconda/bin/conda install matplotlib
-/home/user/miniconda/bin/conda install tqdm
-/home/user/miniconda/bin/conda install h5py
+apt-get install -y software-properties-common
+add-apt-repository ppa:deadsnakes/ppa
+apt-get install -y python3.7-dev
+wget https://bootstrap.pypa.io/get-pip.py
+python3.7 get-pip.py
 
-/home/user/miniconda/bin/conda install pandas
-#/home/user/miniconda/bin/conda install -c simpleitk simpleitk
-#/home/user/miniconda/bin/conda install -c comet_ml comet_ml
+#apt-get install -y python3-pip
+# scikit, scipy
+apt-get install -y python3-sklearn python3-sklearn-lib python3-sklearn-doc
+apt-get clean
 
-/home/user/miniconda/bin/conda install -c anaconda gcc_linux-64
+pip install --upgrade pip
+pip install Pillow
+pip install matplotlib
+pip install tqdm
+pip install h5py
+pip install pandas
+pip install simpleitk
+pip install comet_ml
 git clone https://github.com/facebookresearch/mmf.git
 cd mmf
-/home/user/miniconda/bin/pip install --editable .
+pip install --editable .
 
 %runscript
 # executes with the singularity run command
