@@ -52,7 +52,7 @@ apt-get update
 
 git clone https://github.com/facebookresearch/mmf.git
 cd mmf
-#home/user/miniconda/bin/pip install --editable .
+/home/user/miniconda/bin/pip install --editable .
 
 %runscript
 # executes with the singularity run command
